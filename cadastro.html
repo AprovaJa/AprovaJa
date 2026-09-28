@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Criar conta | AprovaJ&aacute;</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="topo">
+<a class="marca" href="index.html"><img src="logo.png" alt="AprovaJ&aacute;" width="140" height="112"></a>
+<div class="topo-acoes"><a href="index.html">In&iacute;cio</a><a class="selo" href="login.html">Entrar</a></div>
+</header>
+<main class="acesso"><div class="cartao-acesso">
+<h1>Criar conta no AprovaJ&aacute;</h1>
+<form action="boas-vindas.html" method="post">
+<label class="campo"><span>E-mail</span><input type="email" name="email" placeholder="seu@email.com"></label>
+<label class="campo"><span>Nome</span><input type="text" name="nome" placeholder="Como quer ser chamado"></label>
+<label class="campo"><span>Ano letivo</span>
+<select name="ano">
+<option>6&ordm; ano, fundamental</option>
+<option>7&ordm; ano, fundamental</option>
+<option>8&ordm; ano, fundamental</option>
+<option>9&ordm; ano, fundamental</option>
+<option>1&ordm; ano, ensino m&eacute;dio</option>
+<option>2&ordm; ano, ensino m&eacute;dio</option>
+<option>3&ordm; ano, ensino m&eacute;dio</option>
+</select></label>
+<label class="campo"><span>Senha</span><input type="password" name="senha" placeholder="Pelo menos 8 caracteres"></label>
+<label class="campo"><span>Repetir a senha</span><input type="password" name="senha2" placeholder="A mesma senha de cima"></label>
+<label class="marcacao"><input type="checkbox" name="termos" required>Aceito os termos de uso</label>
+<button class="botao botao-principal botao-largo" type="submit">Cadastrar-se</button>
+</form>
+<p class="rodape-acesso">J&aacute; tem uma conta? <a href="login.html">Entre</a></p>
+</div></main>
+</body>
+</html>
