@@ -337,7 +337,7 @@ textarea { min-height: 130px; resize: vertical; }
   width: min(960px, 100%);
   margin-top: 18px;
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 30px 16px;
   border: 1px solid transparent;
   background-image: linear-gradient(var(--cartao), var(--cartao)), var(--degrade-borda);
   background-origin: border-box;
