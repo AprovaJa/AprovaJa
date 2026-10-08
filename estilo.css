@@ -334,7 +334,7 @@ textarea { min-height: 130px; resize: vertical; }
 
 .ia { display: grid; place-items: center; min-height: 60vh; text-align: center; }
 .caixa-pergunta {
-  width: min(760px, 100%);
+  width: min(960px, 100%);
   margin-top: 18px;
   border-radius: 14px;
   padding: 14px 16px;
