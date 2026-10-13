@@ -1,6 +1,4 @@
-/* AprovaJá - script.js
-   Manipulação de DOM, preventDefault() nos formulários e links, e localStorage
-   para manter os dados depois de F5. Sem bibliotecas. */
+
 (function () {
   'use strict';
 
@@ -9,7 +7,7 @@
   const SENSIVEL = /senha|codigo|password/i;
   const RESPOSTA_DEMO = 'Estou em modo de demonstração: sua pergunta ficou salva neste navegador, mas a resposta real da IA ainda será conectada.';
 
-  /* ---------- localStorage com proteção (nunca lança erro no Console) ---------- */
+
   const guardar = {
     ler(chave, padrao) {
       try {
@@ -31,7 +29,7 @@
       try {
         window.localStorage.removeItem(PREFIXO + chave);
       } catch (erro) {
-        /* armazenamento indisponível: nada a apagar */
+
       }
     },
     limparTudo() {
@@ -41,12 +39,11 @@
           .forEach((chave) => window.localStorage.removeItem(chave));
         window.sessionStorage.clear();
       } catch (erro) {
-        /* armazenamento indisponível: nada a apagar */
+
       }
     }
   };
 
-  /* ---------- utilitários de DOM ---------- */
   const $ = (seletor, raiz) => (raiz || document).querySelector(seletor);
   const $$ = (seletor, raiz) => Array.from((raiz || document).querySelectorAll(seletor));
   const pagina = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
@@ -95,7 +92,7 @@
     }
   }
 
-  /* regras: [{ campo, ok, msg }]. Mostra o primeiro erro, marca o campo e devolve true/false. */
+
   function validar(form, regras) {
     $$('.campo-invalido', form).forEach((campo) => {
       campo.classList.remove('campo-invalido');
@@ -115,7 +112,7 @@
     return true;
   }
 
-  /* ---------- rascunho: o que foi digitado sobrevive ao F5 (senhas e códigos nunca são guardados) ---------- */
+
   function lerCampos(form) {
     const dados = {};
     Array.from(form.elements).forEach((el) => {
@@ -149,7 +146,7 @@
     return () => guardar.apagar(chave);
   }
 
-  /* ---------- itens comuns a todas as páginas ---------- */
+
   function aplicarUsuario() {
     const usuario = guardar.ler('usuario', null);
     if (!usuario) return;
@@ -180,7 +177,7 @@
     });
   }
 
-  /* ---------- acesso: login, cadastro, recuperar senha ---------- */
+
   function paginaLogin() {
     const form = $('main form');
     if (!form) return;
@@ -395,7 +392,6 @@
     });
   }
 
-  /* ---------- planos de estudo ---------- */
   function hojeISO() {
     const agora = new Date();
     return agora.getFullYear() + '-' + String(agora.getMonth() + 1).padStart(2, '0') + '-' + String(agora.getDate()).padStart(2, '0');
@@ -492,7 +488,7 @@
     guardar.ler('planos', []).forEach((plano) => lista.insertBefore(criarCartao(plano), lista.firstChild));
   }
 
-  /* ---------- exercícios ---------- */
+
   const QUESTOES = [
     {
       enunciado: 'Uma rampa de acesso forma um ângulo de 30° com o chão e tem 12 metros de comprimento. Considerando que o terreno é plano, qual é a altura atingida pela rampa em relação ao ponto de partida?',
@@ -633,7 +629,7 @@
     desenhar();
   }
 
-  /* ---------- assistente de IA ---------- */
+
   function paginaIa() {
     const form = $('.caixa-pergunta');
     const campo = form ? $('textarea', form) : null;
@@ -703,7 +699,7 @@
     desenhar();
   }
 
-  /* ---------- ajuda e contato ---------- */
+
   function paginaAjuda() {
     const busca = $('input[type="search"]');
     const lista = $('.lista-cartoes');
@@ -750,7 +746,7 @@
     });
   }
 
-  /* ---------- roteador: cada página liga só o que ela usa ---------- */
+
   const paginas = {
     'login.html': paginaLogin,
     'cadastro.html': paginaCadastro,
