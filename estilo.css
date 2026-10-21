@@ -364,7 +364,7 @@ textarea { min-height: 130px; resize: vertical; }
 .sugestao:hover { color: var(--texto); border-color: var(--roxo-claro); text-decoration: none; }
 
 .perfil-grade { display: grid; grid-template-columns: 1fr 280px; gap: 30px; }
-.foto-perfil { background: #d9dcf0; border-radius: 10px; min-height: 210px; display: flex; align-items: flex-end; justify-content: center; gap: 10px; padding: 12px; }
+.foto-perfil { background: #d9dcf0; border-radius: 10px; min-height: 210px; }
 .aba-titulo { color: var(--roxo-claro); border-bottom: 2px solid var(--roxo); display: inline-block; padding-bottom: 6px; margin-bottom: 20px; }
 
 .metricas { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
